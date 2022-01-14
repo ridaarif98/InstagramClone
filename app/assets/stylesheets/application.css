@@ -12,4 +12,20 @@
  *
  *= require_tree .
  *= require_self
+
  */
+ /* * {
+    background-color: whitesmoke
+} */
+
+.center-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    /* background-color:  rgba(var(--d87,255,255,255),1); */
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    margin: 5px 30%;
+    padding-top: 30px;
+}
