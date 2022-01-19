@@ -1,15 +1,10 @@
-<nav class="navbar  navbar-expand-lg navbar-light bg-light">
-<div class="container-fluid">
-  <a class="navbar-brand" href="#"><%= image_tag("735145cfe0a4.png", alt: "logo", class:"img-fluid") %></a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
- 
-  <form class="d-flex">
-  <input class="form-control me-2" type="search" style="font-family: FontAwesome;" placeholder="&#xf002 Search" aria-label="Search">
-  <button class="btn btn-outline-transparent" type="submit"><i class="fa fa-search"></i></button>
-</form> 
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="nav-bar navbar-light bg-light">
+    <a class="navbar-brand" href="#"><%= image_tag("735145cfe0a4.png", alt: "logo", class:"img-fluid") %></a>
+    <form>
+      <input class="form-control me-2" type="search" style="font-family: FontAwesome;" placeholder="&#xf002 Search" aria-label="Search">
+      <button class="btn btn-outline-transparent" type="submit"><i class="fa fa-search"></i></button>
+    </form> 
+    <ul class="mb-2 mb-lg-0">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="/"><i class="fa fa-home"></i></i></a>
       </li>
@@ -28,13 +23,17 @@
         <% if user_signed_in? %>
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <% if current_user.image.attached? %>
-          <%= image_tag current_user.image %>
+          <%= image_tag current_user.image ,class:"img-thumbnail profile" %>
         <%else%>
           <%= current_user.user_name %>
         <%end%>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li>
+            <%= link_to user_path(current_user), class:"dropdown-item"  do %>
+              Profile
+            <%end%>
+          </li>
           <li><a class="dropdown-item" href="#">Saved</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>
           <li> 
@@ -46,8 +45,5 @@
         </ul>
         <%end%>
       </li>
-    </ul>
-   
-  
-</div>
+    </ul> 
 </nav>

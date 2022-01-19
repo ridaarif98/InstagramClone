@@ -1,0 +1,31 @@
+<%=render 'shared/header'%>
+<div class="user-profile">
+    <% if current_user.image.attached? %>
+        <%= image_tag current_user.image ,alt: "userImg", class:"img-thumbnail" %>
+    <%else%>
+        <%= image_tag("Sample_User_Icon.png", alt: "userImg", class:"img-thumbnail") %>
+    <%end%>
+
+    <div class="user-info">
+    
+        <ul class="user">
+            <li class="h3"><%= current_user.user_name%></li>
+            <li>
+                <%= link_to edit_user_registration_path, class:"btn btn-light h6 px-4"  do %>
+                    Edit
+                <%end%>
+            </li>
+            <li class="h4 py-2"><i class="fa fa-gear"></i></li>
+        </ul>
+
+        <ul class="user">
+            <li>0 posts</li>
+            <li>0 followers</li>
+            <li>0 following</li>
+        </ul>
+        
+        <ul class="user">
+            <li class="h5"><%= current_user.full_name%></li>
+        </ul>
+    </div>
+</div>
