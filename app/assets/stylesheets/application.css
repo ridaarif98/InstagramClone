@@ -14,9 +14,7 @@
  *= require_self
 
  */
- /* * {
-    background-color: whitesmoke
-} */
+
 nav {
   padding: 2px 14%;
   display: flex;
@@ -113,7 +111,7 @@ nav .profile {
 .edit-user ul li {
   font-size: 16px;
   padding: 8px 3px;
-}  
+}
 
 .user-profile .user-info .user li {
   display: flex;
