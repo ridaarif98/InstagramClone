@@ -32,8 +32,8 @@ nav form {
 }
 
 nav form input {
-    height: 36px;
-    margin: 7px 0;
+  height: 36px;
+  margin: 7px 0;
 }
 
 nav ul {
@@ -53,18 +53,18 @@ nav ul li a i {
 }
 
 nav .profile {
- height: 37px;
- border-radius: 50%;
- padding-bottom: 5px;
+  height: 37px;
+  border-radius: 50%;
+  padding-bottom: 5px;
 }
+
 .center-items {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
-    /* background-color:  rgba(var(--d87,255,255,255),1); */
-  border: 1px solid rgba(var(--b6a,219,219,219),1);
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 10%;
@@ -82,38 +82,43 @@ nav .profile {
 }
 
 .user-profile {
-    display: flex;
-    flex-direction: row;
-    margin: 10px 17%;
-    padding: 20px;
-    border-bottom: 1px solid rgb(228, 222, 222);
+  display: flex;
+  flex-direction: row;
+  margin: 10px 17%;
+  padding: 20px;
+  border-bottom: 1px solid rgb(228, 222, 222);
 }
 
 .user-profile img {
-   display: flex;
-   border-radius: 50%;
-   margin-right: 50px;
-   height: 150px;
+  display: flex;
+  border-radius: 50%;
+  margin-right: 50px;
+  height: 150px;
 }
 
 .user-profile .user-info {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: flex-start;
 }
 
 .user-profile .user-info .user {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
 }
 
+.edit-user ul li {
+  font-size: 16px;
+  padding: 8px 3px;
+}  
+
 .user-profile .user-info .user li {
-    display: flex;
-    padding: 5px 20px;
-    justify-content: space-between;
+  display: flex;
+  padding: 5px 20px;
+  justify-content: space-between;
 }
 
 /* Edit user page css */
@@ -131,15 +136,9 @@ nav .profile {
   border-right: 1px solid rgb(228, 222, 222);
 }
 
-.edit-user ul li {
-  font-size: 16px;
-  padding: 8px 3px;
-}
-
 .edit-profile img {
-    display: flex;
-    border-radius: 50%;
-    margin-right: 50px;
-    height: 120px;
- }
- 
+  display: flex;
+  border-radius: 50%;
+  margin-right: 50px;
+  height: 120px;
+}
