@@ -21,12 +21,12 @@
       <div class="mb-3 row edit-profile pt-2">
       <% if current_user.image.attached?%>
       <div class="col-sm-4  col-form-label ps-4">
-        <%= image_tag current_user.image ,class:"img-thumbnail profile" %>
+        <%= image_tag current_user.image ,class:"img-thumbnail profile", id:"user-img" %>
       </div>
       <%end%>
       <div class="col-sm-8 mt-2">
       <p class="h4">  <%= current_user.user_name %></p>
-      <%= f.file_field :image, autofocus: true, autocomplete: "image", class:"form-control mt-3" %>
+      <%= f.file_field :image, autofocus: true, autocomplete: "image", class:"form-control mt-3", id:"upload-img" %>
       </div>
       </div>
 
