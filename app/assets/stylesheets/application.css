@@ -140,3 +140,41 @@ nav .profile {
   margin-right: 50px;
   height: 120px;
 }
+
+.post-div {
+  height: 120px;
+}
+
+.post-div img {
+  display: flex;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 100px;
+}
+
+.post-div textarea {
+  border: none;
+  margin: 10px;
+  padding: 25px 10px;
+}
+
+.img-field {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 10%;
+}
+
+.img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10%;
+}
+
+.img-div img {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  border: 1px solid rgb(214, 207, 207);
+}
