@@ -1,0 +1,22 @@
+<%=render 'shared/header'%>
+<%= form_with  model:@post, class:"input-form"  do |f|%>
+    <% if current_user.image.attached?%>
+    <div class="ps-3 d-flex post-div">
+      <%= image_tag current_user.image ,class:"img-thumbnail profile", id:"user-img" %> 
+      <p class="h6 pt-5">  <%= current_user.user_name %></p>
+    
+    <%end%>
+    <%= f.hidden_field :user_id, value: @user.id %>
+
+    <%= f.text_area :text , required:true,  class:"form-control mt-3", placeholder: "Write a caption..."%><br>
+    </div>
+
+    <div class="img-field ">
+    <%= f.file_field :image, autofocus: true, class:"form-control ms-5 me-2", id:"imgUp" %>
+    <%= f.submit "Share", class: "submit btn btn-primary px-3 me-2" %>
+
+        <%=link_to 'Cancel', root_path, class:"btn btn-primary px-3"%>
+    </div>
+    <div id="blah" class="img-div"></div>
+    
+<%end%>

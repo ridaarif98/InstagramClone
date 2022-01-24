@@ -11,3 +11,52 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require("jquery")
+
+require('test')
+
+function showImage(input) {
+    
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        const imgTag =  document.createElement('IMG');
+        imgTag.src = e.target.result;
+
+        $('#blah').html(imgTag);
+       };
+
+      reader.readAsDataURL(input.files[0]);
+    
+    console.log('hello00');
+    console.log(input.value);
+   
+
+}
+
+function showProfileImage(input) {
+    
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('#user-img')
+        .attr('src', e.target.result);
+    };
+
+    reader.readAsDataURL(input.files[0]);
+}
+
+
+
+
+$(document).ready(function test() {
+  $('#imgUp').change( function testt() {
+    showImage(this);
+  });
+
+  $('#upload-img').change( function profileUpdate() {
+    console.log('hello');
+  showProfileImage(this);
+});
+
+});

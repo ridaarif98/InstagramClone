@@ -11,14 +11,17 @@
       <li class="nav-item">
         <a class="nav-link active" href="#"><i class="fa fa-paper-plane"></i></a>
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link active" href="#"> <i class="fa fa-plus-square"></i></a>
-      </li>
+      <li class="nav-item">  
+      <%=link_to new_post_path, class:"nav-link active"  do %> <i class="fa fa-plus-square"></i><%end%>
+     </li>
 
       <li class="nav-item">
         <a class="nav-link active" href="#"><i class="fa fa-heart"></i></a>
       </li>
+      
+      <li>
+      </li>
+
       <li class="nav-item dropdown">
         <% if user_signed_in? %>
         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
