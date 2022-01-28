@@ -1,0 +1,74 @@
+<div class="posts-user">
+  <div class="row row-cols-3">
+   <% @posts.each do |post|%>
+      <div class="col inner-div" data-bs-toggle="modal" data-bs-target="#exampleModal<%=post.id%>">
+        <%= image_tag post.image ,alt: "postImg", class:"img-fluid" %>
+        <div class="post-icon">
+          <p>
+            <i class="fa fa-heart"></i>
+            <i class="fa fa-comment"></i>
+          </p>
+        </div>
+      </div>
+          
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal<%=post.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          
+          <div class=" popup modal-content">     
+            <div class="popup-content modal-body d-flex">                    
+              <%= image_tag post.image ,alt: "postImg", class:"img-fluid popup-content" %>                     
+              <div class="popup-body">
+                <div class="post-user">
+                  <div class="post-user-info">
+                    <% if post.user.image.attached?%>
+                      <%= image_tag current_user.image ,class:"img-thumbnail profile ms-2" %>
+                    <%else%>
+                      <%= image_tag Sample_User_Icon.png ,class:"img-thumbnail profile ms-2" %>
+                    <%end%>
+                    <p class="h6 pt-2 ps-1"><%= post.user.user_name%></p>
+                  </div>
+                    <i class="fa fa-ellipsis-h pt-2 pe-2 me-2"></i>
+                </div>
+
+
+                <div class="post-comments">
+                  <div class="post-user-info">
+                    
+                  </div>          
+                </div>
+
+                <div class="post-detail">
+                  <div class="post-icons">
+                    <div>
+                      <i class="fa fa-heart-o"></i>
+                      <i class="fa fa-comment-o"></i>
+                      <i class="fa fa-send-o"></i>
+                    </div>   
+                    <i class="fa fa-bookmark-o"></i>
+                  </div>
+                  <%  if post.text?%>
+                    <p><%= post.text%></p>
+                  <%end%>
+                </div>
+
+                <form>
+                  <div class="form-row">
+                    <div class="col d-flex">
+                      <input type="text" class="form-control" placeholder="Add a comment...">
+                      <button type="button" class="btn btn-link">Post</button>
+                    </div>
+                  </div>
+                </form>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <%end%>
+  </div>
+</div>
