@@ -4,7 +4,7 @@
         <div class="post-user">
             <div class="post-user-info">
             <% if post.user.image.attached?%>
-            <%= image_tag current_user.image ,class:"img-thumbnail profile" %>
+            <%= image_tag post.user.image ,class:"img-thumbnail profile" %>
             <%else%>
                 <%= image_tag Sample_User_Icon.png ,class:"img-thumbnail profile" %>
             <%end%>
@@ -20,15 +20,19 @@
         <div class="post-detail">
             <div class="post-icons">
                 <div>
-                <i class="fa fa-heart-o"></i>
+                <i class="fa fa-heart-o post-like like-<%= post.id%> <%='active' if post_liked_by_user?(post.id)%>" data-id="<%=post.id%>">
+                
+                </i>
                 <i class="fa fa-comment-o"></i>
                 <i class="fa fa-send-o"></i>
                 </div>   
                 <i class="fa fa-bookmark-o"></i>
             </div>
+           <strong id="post-<%= post.id%>-likes"> <%= post.likes_counter%> Likes</strong>
             <%  if post.text?%>
                 <p><%= post.text%></p>
             <%end%>
         </div>
     </div>    
 <%end%>
+
