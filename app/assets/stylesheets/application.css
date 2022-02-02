@@ -206,6 +206,11 @@ nav .profile {
   padding: 2px 6px;
   line-height: 40px;
   font-weight: 900;
+  cursor: pointer;
+}
+
+.post-icons i:hover {
+  color: brown;
 }
 
 .all-posts .post-user {
@@ -322,3 +327,6 @@ nav .profile {
   border: none;
 }
 
+.active {
+  color: red;
+}
