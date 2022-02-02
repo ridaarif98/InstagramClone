@@ -13,7 +13,8 @@ Turbolinks.start()
 ActiveStorage.start()
 require("jquery")
 
-require('test')
+require('packs/posts')
+require('packs/users')
 
 function showImage(input) {
     
@@ -34,29 +35,9 @@ function showImage(input) {
 
 }
 
-function showProfileImage(input) {
-    
-    var reader = new FileReader();
-
-    reader.onload = function (e) {
-      $('#user-img')
-        .attr('src', e.target.result);
-    };
-
-    reader.readAsDataURL(input.files[0]);
-}
-
-
-
-
 $(document).ready(function test() {
   $('#imgUp').change( function testt() {
     showImage(this);
   });
-
-  $('#upload-img').change( function profileUpdate() {
-    console.log('hello');
-  showProfileImage(this);
-});
 
 });

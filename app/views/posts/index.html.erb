@@ -1,8 +1,38 @@
+<%= render 'shared/header'%>
 <% @posts.each do |post|%>
-    <%  if post.text?%>
-        <p><%= post.text%></p>
-    <%end%>
-    <% if post.image.attached? %>
-    <%= image_tag post.image ,class:"img-thumbnail profile" %>
-    <%end%>     
+    <div class="all-posts">
+        <div class="post-user">
+            <div class="post-user-info">
+            <% if post.user.image.attached?%>
+            <%= image_tag post.user.image ,class:"img-thumbnail profile" %>
+            <%else%>
+                <%= image_tag Sample_User_Icon.png ,class:"img-thumbnail profile" %>
+            <%end%>
+                <p class="h6 pt-2"><%= post.user.user_name%></p>
+            </div>
+            <i class="fa fa-ellipsis-h pt-2 pe-2"></i>
+        </div>
+        
+            <% if post.image.attached? %>
+                <%= image_tag post.image ,class:"profile" %>
+            <%end%> 
+        
+        <div class="post-detail">
+            <div class="post-icons">
+                <div>
+                <i class="fa fa-heart-o post-like like-<%= post.id%> <%='active' if post_liked_by_user?(post.id)%>" data-id="<%=post.id%>">
+                
+                </i>
+                <i class="fa fa-comment-o"></i>
+                <i class="fa fa-send-o"></i>
+                </div>   
+                <i class="fa fa-bookmark-o"></i>
+            </div>
+           <strong id="post-<%= post.id%>-likes"> <%= post.likes_counter%> Likes</strong>
+            <%  if post.text?%>
+                <p><%= post.text%></p>
+            <%end%>
+        </div>
+    </div>    
 <%end%>
+

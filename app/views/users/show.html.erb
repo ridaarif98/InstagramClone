@@ -19,7 +19,7 @@
         </ul>
 
         <ul class="user">
-            <li>0 posts</li>
+            <li><%= current_user.posts.count%> posts</li>
             <li>0 followers</li>
             <li>0 following</li>
         </ul>
@@ -29,3 +29,5 @@
         </ul>
     </div>
 </div>
+<%=render partial: 'post', object: @posts%>
+
