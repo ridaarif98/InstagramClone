@@ -219,7 +219,6 @@ nav .profile {
   justify-content: space-between;
   margin: 5px;
   padding: 5px 0;
-  /* background-color: whitesmoke; */
 }
 
 .all-posts .post-user .post-user-info,
@@ -227,6 +226,12 @@ nav .profile {
   display: flex;
   flex-direction: row;
   padding: 0;
+}
+
+.posts-user img {
+  height: 330px;
+  margin: 10px;
+  width: 330px;
 }
 
 .all-posts .post-user img,
@@ -246,14 +251,8 @@ nav .profile {
   padding: 20px;
 }
 
-.posts-user .inner-div{
+.posts-user .inner-div {
   position: relative;
-}
-
-.posts-user img {
-  height: 330px;
-  margin: 10x;
-  width: 330px;
 }
 
 .posts-user .post-icon {
@@ -291,7 +290,6 @@ nav .profile {
 .popup .popup-content img {
   width: 50%;
   height: 100%;
-  /* margin-right: 1%; */
 }
 
 .popup-body {
@@ -306,7 +304,6 @@ nav .profile {
   padding: 5px 0;
   height: 60px;
   border-bottom: 1px solid rgb(228, 222, 222);
-  /* background-color: whitesmoke; */
 }
 
 .popup-body .post-comments {
@@ -317,12 +314,12 @@ nav .profile {
   padding: 5px 0;
   height: 280px;
   border-bottom: 1px solid rgb(228, 222, 222);
-  /* background-color: whitesmoke; */
 }
 
 .popup-body form {
   border-top: 1px solid rgb(228, 222, 222);
 }
+
 .popup-body form input {
   border: none;
 }
