@@ -92,6 +92,7 @@ nav .profile {
   border-radius: 50%;
   margin-right: 50px;
   height: 150px;
+  width: 150px;
 }
 
 .user-profile .user-info {
@@ -139,6 +140,7 @@ nav .profile {
   border-radius: 50%;
   margin-right: 50px;
   height: 120px;
+  width: 120px;
 }
 
 .post-div {
@@ -180,14 +182,6 @@ nav .profile {
 }
 
 /* post index css */
-
-.all-posts {
-  width: 46%;
-  margin: 10px 25%;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(211, 207, 207);
-}
 
 .all-posts .profile {
   width: 100%;
@@ -235,8 +229,10 @@ nav .profile {
 }
 
 .all-posts .post-user img,
-.popup-body .post-user img {
-  height: 45px;
+.popup-body .post-user img,
+.recommended-followers  .profile {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   margin-right: 12px;
 }
@@ -326,4 +322,11 @@ nav .profile {
 
 .active {
   color: red;
+}
+
+.recommended-followers  .profile {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 12px;
 }
