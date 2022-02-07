@@ -1,0 +1,14 @@
+<% @follwers_suggestion.each do |user|%>
+    <div class="recommended-followers">
+        <%=image_tag user.image, class:"img-thumbnail profile"%>
+        
+        <%= link_to user_path(user.id) do %>
+            <%= user.user_name %>
+          <%end%>
+      <%=user.created_at < 24? "new": "old"  %> 
+      <%= form_tag follow_account_path, method: :post, class: "float-right" do%>
+        <%= hidden_field_tag :follow_id, user.id %>
+        <%= submit_tag "Follow", class: "btn btn-info btn-sm"%>
+      <%end%>
+    </div>
+<%end%>
