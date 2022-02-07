@@ -1,6 +1,6 @@
 <div class="posts-user">
   <div class="row row-cols-3">
-   <% @posts.each do |post|%>
+   <% @user.posts.each do |post|%>
       <div class="col inner-div" data-bs-toggle="modal" data-bs-target="#exampleModal<%=post.id%>">
         <%= image_tag post.image ,alt: "postImg", class:"img-fluid" %>
         <div class="post-icon">

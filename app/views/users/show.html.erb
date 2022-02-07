@@ -1,7 +1,7 @@
 <%=render 'shared/header'%>
 <div class="user-profile">
-    <% if current_user.image.attached? %>
-        <%= image_tag current_user.image ,alt: "userImg", class:"img-thumbnail" %>
+    <% if @user.image.attached? %>
+        <%= image_tag @user.image ,alt: "userImg", class:"img-thumbnail" %>
     <%else%>
         <%= image_tag("Sample_User_Icon.png", alt: "userImg", class:"img-thumbnail") %>
     <%end%>
@@ -9,25 +9,28 @@
     <div class="user-info">
     
         <ul class="user">
-            <li class="h3"><%= current_user.user_name%></li>
+            <li class="h3"><%= @user.user_name%></li>
+            <% if @user.id === current_user.id%>
             <li>
                 <%= link_to edit_user_registration_path, class:"btn btn-light h6 px-4"  do %>
                     Edit
                 <%end%>
             </li>
+            
             <li class="h4 py-2"><i class="fa fa-gear"></i></li>
+            <%end%>
         </ul>
 
         <ul class="user">
-            <li><%= current_user.posts.count%> posts</li>
-            <li>0 followers</li>
-            <li>0 following</li>
+            <li><%= @user.posts.count%> posts</li>
+            <li><%= @user.total_followers%> followers</li>
+            <li><%= @user.total_following%> following</li>
         </ul>
         
         <ul class="user">
-            <li class="h5"><%= current_user.full_name%></li>
+            <li class="h5"><%= @user.full_name%></li>
         </ul>
     </div>
 </div>
-<%=render partial: 'post', object: @posts%>
+<%=render partial: 'post', object: @user.posts%>
 
