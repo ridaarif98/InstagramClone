@@ -8,4 +8,12 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   has_one_attached :image
+
+  def total_followers
+    Follower.where(follower_id: self.id).count
+  end
+
+  def total_following
+    Follower.where(following_id: self.id).count
+  end
 end
