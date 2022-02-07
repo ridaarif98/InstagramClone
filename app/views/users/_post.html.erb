@@ -5,7 +5,7 @@
         <%= image_tag post.image ,alt: "postImg", class:"img-fluid" %>
         <div class="post-icon">
           <p>
-            <i class="fa fa-heart"></i>
+          <i class="fa fa-heart me-3"> <strong id="post-<%= post.id%>-likes"> <%= post.likes_counter%> </strong></i>
             <i class="fa fa-comment"></i>
           </p>
         </div>
@@ -42,12 +42,15 @@
                 <div class="post-detail">
                   <div class="post-icons">
                     <div>
-                      <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-heart-o post-like like-<%= post.id%> <%='active' if post_liked_by_user?(post.id)%>" data-id="<%=post.id%>">
+                
+                    </i>
                       <i class="fa fa-comment-o"></i>
                       <i class="fa fa-send-o"></i>
                     </div>   
                     <i class="fa fa-bookmark-o"></i>
                   </div>
+                  <strong id="post-<%= post.id%>-likes"> <%= post.likes_counter%> Likes</strong>
                   <%  if post.text?%>
                     <p><%= post.text%></p>
                   <%end%>
