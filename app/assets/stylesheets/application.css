@@ -192,6 +192,7 @@ nav .profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  bottom: 0;
   padding: 0 10px;
 }
 
@@ -299,17 +300,19 @@ nav .profile {
   justify-content: space-between;
   padding: 5px 0;
   height: 60px;
-  border-bottom: 1px solid rgb(228, 222, 222);
 }
 
 .popup-body .post-comments {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 5px 0;
   height: 280px;
+  overflow-x: hidden;
+  overflow-y: auto;
   border-bottom: 1px solid rgb(228, 222, 222);
+  border-top: 1px solid rgb(228, 222, 222);
 }
 
 .popup-body form {
@@ -329,4 +332,11 @@ nav .profile {
   width: 60px;
   border-radius: 50%;
   margin: 12px;
+}
+
+.post-comments .post-user-info .profile {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  /* margin: 12px; */
 }
