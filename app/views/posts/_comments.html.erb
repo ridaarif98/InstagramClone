@@ -1,18 +1,22 @@
-<div class="posts-user">
-  <div class="row row-cols-3">
-   <% @user.posts.each do |post|%>
-      <div class="col inner-div" data-bs-toggle="modal" data-bs-target="#exampleModal<%=post.id%>">
-        <%= image_tag post.image ,alt: "postImg", class:"img-fluid" %>
-        <div class="post-icon">
-          <p>
-          <i class="fa fa-heart me-3"> <strong id="post-<%= post.id%>-likes"> <%= post.likes_counter.to_i%> </strong></i>
-            <i class="fa fa-comment"><strong class="ms-1"><%= post.comments_counter.to_i%></strong></i>
-          </p>
-        </div>
-      </div>
-          
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal<%=post.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div>
+    <i class="fa fa-heart-o post-like like-<%= post.id%>
+        <%='active' if post_liked_by_user?(post.id)%>" data-id="<%=post.id%>">
+    </i>
+    <i class="fa fa-comment-o" data-bs-toggle="modal" data-bs-target="#exampleModal<%=post.id%>"></i>
+    <i class="fa fa-send-o"></i>
+</div>   
+    <i class="fa fa-bookmark-o"></i>
+</div>
+    <strong id="post-<%= post.id%>-likes" class="ms-2"> Liked by <%= post.likes_counter.to_i%> </strong>
+    <%  if post.text?%>
+    <p class="h6 ms-2 mt-1"><%= post.text%></p>
+    <%end%>
+    <i class="ms-2 mt-1 text-muted" data-bs-toggle="modal" data-bs-target="#exampleModal<%=post.id%>">
+    View all <%= post.comments_counter.to_i%> comments
+    </i>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<%=post.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="modal-dialog modal-dialog-centered modal-lg">
           
@@ -43,8 +47,8 @@
                           <%else%>
                             <%= image_tag Sample_User_Icon.png ,class:"img-thumbnail profile" %>
                           <%end%>
-                          <p class="h6 pt-3"><%= comment.user.user_name%></p>
-                          <p class=" ps-2 pt-3"><%= comment.text%></p>
+                          <p class="h6 ps-1 pt-2"><%= comment.user.user_name%></p>
+                          <p class=" ps-2 pt-1"><%= comment.text%></p>
                         </div>   
                       <%end%>
                           
@@ -87,6 +91,4 @@
       </div>
 
 
-    <%end%>
-  </div>
-</div>
+
