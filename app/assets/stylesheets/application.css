@@ -92,6 +92,7 @@ nav .profile {
   border-radius: 50%;
   margin-right: 50px;
   height: 150px;
+  width: 150px;
 }
 
 .user-profile .user-info {
@@ -139,6 +140,7 @@ nav .profile {
   border-radius: 50%;
   margin-right: 50px;
   height: 120px;
+  width: 120px;
 }
 
 .post-div {
@@ -181,14 +183,6 @@ nav .profile {
 
 /* post index css */
 
-.all-posts {
-  width: 46%;
-  margin: 10px 25%;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgb(211, 207, 207);
-}
-
 .all-posts .profile {
   width: 100%;
   border-top: 1px solid rgb(211, 207, 207);
@@ -198,6 +192,7 @@ nav .profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  bottom: 0;
   padding: 0 10px;
 }
 
@@ -235,8 +230,10 @@ nav .profile {
 }
 
 .all-posts .post-user img,
-.popup-body .post-user img {
-  height: 45px;
+.popup-body .post-user img,
+.recommended-followers .profile {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   margin-right: 12px;
 }
@@ -263,7 +260,7 @@ nav .profile {
   opacity: 0;
   text-align: center;
   top: 50%;
-  left: 50%;
+  left: 53%;
   transform: translate(-50%, -50%);
 }
 
@@ -303,17 +300,19 @@ nav .profile {
   justify-content: space-between;
   padding: 5px 0;
   height: 60px;
-  border-bottom: 1px solid rgb(228, 222, 222);
 }
 
 .popup-body .post-comments {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 5px 0;
   height: 280px;
+  overflow-x: hidden;
+  overflow-y: auto;
   border-bottom: 1px solid rgb(228, 222, 222);
+  border-top: 1px solid rgb(228, 222, 222);
 }
 
 .popup-body form {
@@ -326,4 +325,17 @@ nav .profile {
 
 .active {
   color: red;
+}
+
+.recommended-followers .profile {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 12px;
+}
+
+.post-comments .post-user-info .profile {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
 }

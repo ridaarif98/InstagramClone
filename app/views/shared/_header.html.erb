@@ -33,12 +33,12 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li>
-            <%= link_to user_path(current_user), class:"dropdown-item"  do %>
-              <i class="fa fa-user-circle-o me-2"></i> Profile
+            <%= link_to user_path(current_user.id), class:"dropdown-item"  do %>
+              <i class="fa fa-user-circle-o me-4"></i>Profile
             <%end%>
           </li>
-          <li><a class="dropdown-item" href="#"><i class="fa fa-bookmark-o me-2"></i>Saved</a></li>
-          <li><a class="dropdown-item" href="#"><i class="fa fa-cog me-2"></i>Settings</a></li>
+          <li><a class="dropdown-item" href="#"><i class="fa fa-bookmark-o me-4"></i>Saved</a></li>
+          <li><a class="dropdown-item" href="#"><i class="fa fa-cog me-4"></i>Settings</a></li>
           <li> 
           <%= link_to destroy_user_session_path, class:"dropdown-item" ,method: :delete do %>
             Logout

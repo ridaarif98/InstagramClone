@@ -1,7 +1,11 @@
 <%= render 'shared/header'%>
+<div class="container all-posts">
+<div class="row justify-content-end ">
+<div class="col-6">
 <% @posts.each do |post|%>
-    <div class="all-posts">
-        <div class="post-user">
+
+    
+        <div class="post-user ">
             <div class="post-user-info">
             <% if post.user.image.attached?%>
             <%= image_tag post.user.image ,class:"img-thumbnail profile" %>
@@ -19,20 +23,32 @@
         
         <div class="post-detail">
             <div class="post-icons">
-                <div>
-                <i class="fa fa-heart-o post-like like-<%= post.id%> <%='active' if post_liked_by_user?(post.id)%>" data-id="<%=post.id%>">
-                
-                </i>
-                <i class="fa fa-comment-o"></i>
-                <i class="fa fa-send-o"></i>
-                </div>   
-                <i class="fa fa-bookmark-o"></i>
-            </div>
-           <strong id="post-<%= post.id%>-likes"> <%= post.likes_counter%> Likes</strong>
-            <%  if post.text?%>
-                <p><%= post.text%></p>
-            <%end%>
+               
+            <%=render 'posts/comments', post: post %>
         </div>
-    </div>    
+        
+        <div>
+        <%= form_with model:@comment,  class:"input-form" do |f|%>
+            <div class="form-row">
+              <div class="col d-flex">
+                <%=f.hidden_field :post_id, value:post.id %>
+                <%= f.text_field :text, class:"form-control" ,placeholder: "Add a comment..." %><br>
+            
+                <%= f.submit "Post", class: "btn btn-link" %>
+              </div>
+            </div>
+        <%end%>
+        </div>
+ 
 <%end%>
+</div>
+<div class="col-3">
+<%= render 'posts/followers'%>
+</div>
+</div>
+
+</div>
+    
+
+
 
