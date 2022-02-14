@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def show
     @user = User.where(id: params[:id]).includes(:posts).take
     @comment = Comment.new
-
   end
 
   def follow_account
