@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.where(id: params[:id]).includes(:posts).take
-    # @posts = Post.where(user_id: current_user.id)
+    @comment = Comment.new
+
   end
 
   def follow_account
